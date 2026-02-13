@@ -76,7 +76,7 @@ RESTful APIs
 
 AWS / Azure / Firebase (hosting)
 
-`📁 Project Structure
+```📁 Project Structure
 
 BagExpress/
 ├── frontend/
@@ -131,7 +131,7 @@ BagExpress/
 ├── .gitignore
 └── README.md
 
-`
+```
 🔗 API Endpoints (Sample)
 Authentication
 POST /register
@@ -218,4 +218,5 @@ This project is licensed under the MIT License.
 
 
 ✔ Easy to extend later
+
 
