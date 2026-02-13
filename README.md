@@ -134,21 +134,21 @@ BagExpress/
 ```
 🔗 API Endpoints (Sample)
 Authentication
-POST /register
-POST /login
+```POST /register
+POST /login```
 
 Delivery
-POST /delivery/create
+```POST /delivery/create
 GET  /delivery/list
-GET  /delivery/{id}
+GET  /delivery/{id}```
 
 Agent
-GET  /agent/tasks
-PUT  /delivery/updateStatus
+```GET  /agent/tasks
+PUT  /delivery/updateStatus```
 
 Admin
-POST /assignAgent
-GET  /admin/reports
+```POST /assignAgent
+GET  /admin/reports```
 
 🧪 Testing Strategy
 
@@ -202,21 +202,4 @@ B.Tech Student | Full-Stack Developer
 📄 License
 
 This project is licensed under the MIT License.
-
-⭐ If you like this project, give it a star!
-✅ Why this README is “GitHub Perfect”
-
-✔ Clear structure
-
-✔ Professional tone
-
-✔ Recruiter-friendly
-
-✔ Clean folder tree
-
-✔ Badges + roadmap
-
-
-✔ Easy to extend later
-
 
