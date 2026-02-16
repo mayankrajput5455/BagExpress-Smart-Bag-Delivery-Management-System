@@ -1,7 +1,7 @@
 ﻿```
 # 📦 BagExpress – Smart Bag Delivery Management System
 
-> **Simplify and streamline luggage and bag delivery services.**
+**Simplify and streamline luggage and bag delivery services.**
 
 **BagExpress** is a centralized, web-based platform designed to connect customers, delivery agents, and administrators on a single system. It efficiently manages bookings, tracking, payments, and delivery operations to improve logistics efficiency and customer experience.
 
@@ -242,3 +242,4 @@ We ensure quality through the following testing strategies:
 
 
 ```
+
