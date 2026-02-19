@@ -31,7 +31,7 @@ app.use("/api/v1/healthcheck", healthCheckRouter)
 app.use("/api/v1/auth", authRouter)
 
 app.get("/",(req, res) =>{
-    res.send("This is homepage");
+    res.send("Hello From Bag Express");
 })
 
 
