@@ -113,11 +113,11 @@ BagExpress/
 │   │   │   └── paymentController.js
 │   │   │
 │   │   ├── models/
-│   │   │   ├── User.js
-│   │   │   ├── Delivery.js
-│   │   │   ├── Bag.js
-│   │   │   ├── Payment.js
-│   │   │   └── Feedback.js
+│   │   │   ├── user.models.js
+│   │   │   ├── delivery.models.js
+│   │   │   ├── bag.models.js
+│   │   │   ├── payment.models.js
+│   │   │   └── feedback.models.js
 │   │   │
 │   │   ├── routes/
 │   │   │   ├── authRoutes.js
@@ -241,5 +241,6 @@ We ensure quality through the following testing strategies:
 
 
 ```
+
 
 
