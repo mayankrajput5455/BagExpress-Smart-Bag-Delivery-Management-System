@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D4438"/>
+      <stop offset="100%" stop-color="#15241C"/>
+    </linearGradient>
+    <linearGradient id="kraftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2B179"/>
+      <stop offset="45%" stop-color="#C58B58"/>
+      <stop offset="100%" stop-color="#9C663B"/>
+    </linearGradient>
+    <linearGradient id="foldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7D4E27"/>
+      <stop offset="100%" stop-color="#9C663B"/>
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBE2A7"/>
+      <stop offset="50%" stop-color="#E5B25D"/>
+      <stop offset="100%" stop-color="#C28B30"/>
+    </linearGradient>
+    <filter id="drop" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background Squircle -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bgGrad)" stroke="#DDB892" stroke-width="1.5" stroke-opacity="0.35"/>
+
+  <!-- Bag Handles -->
+  <path d="M26 23 C 26 13, 38 13, 38 23" fill="none" stroke="url(#goldAccent)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Main Bag Body -->
+  <g filter="url(#drop)">
+    <!-- Bag base silhouette -->
+    <path d="M17 22 L47 22 L44 51 C44 52.5 42.8 53.5 41.3 53.5 L22.7 53.5 C21.2 53.5 20 52.5 20 51 Z" fill="url(#kraftGrad)"/>
+    
+    <!-- Right Fold / Gusset Shadow for 3D depth -->
+    <path d="M37 22 L47 22 L44 51 C44 52.5 42.8 53.5 41.3 53.5 L36 53.5 Z" fill="url(#foldGrad)" opacity="0.45"/>
+
+    <!-- Bag Top Rim / Fold -->
+    <path d="M16 22 L48 22 L47 25.5 L17 25.5 Z" fill="#6B3F1D" opacity="0.6"/>
+
+    <!-- Express Speed / Delivery Wings Accent (Lightning Fast Chevron) -->
+    <path d="M27 33 L36 33 L31 41 L37 41 L27 50 L29 41 L24 41 Z" fill="url(#goldAccent)"/>
+  </g>
+
+  <!-- Eco Leaf Pip in Top Corner -->
+  <circle cx="48" cy="14" r="3.5" fill="#4ADE80"/>
+  <path d="M48 11.5 C 50 13, 50 15, 48 16.5 C 46 15, 46 13, 48 11.5 Z" fill="#15241C"/>
+</svg>
