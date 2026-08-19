@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" width="280" height="64">
+  <defs>
+    <linearGradient id="logoBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D4438"/>
+      <stop offset="100%" stop-color="#15241C"/>
+    </linearGradient>
+    <linearGradient id="logoKraftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2B179"/>
+      <stop offset="45%" stop-color="#C58B58"/>
+      <stop offset="100%" stop-color="#9C663B"/>
+    </linearGradient>
+    <linearGradient id="logoFoldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7D4E27"/>
+      <stop offset="100%" stop-color="#9C663B"/>
+    </linearGradient>
+    <linearGradient id="logoGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBE2A7"/>
+      <stop offset="50%" stop-color="#E5B25D"/>
+      <stop offset="100%" stop-color="#C28B30"/>
+    </linearGradient>
+    <filter id="logoShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Logo Mark Container -->
+  <g transform="translate(4, 4)">
+    <!-- Squircle badge -->
+    <rect x="0" y="0" width="56" height="56" rx="14" fill="url(#logoBgGrad)" stroke="#DDB892" stroke-width="1.5" stroke-opacity="0.4"/>
+    
+    <!-- Bag Handle -->
+    <path d="M23 20 C 23 11, 33 11, 33 20" fill="none" stroke="url(#logoGold)" stroke-width="2.8" stroke-linecap="round"/>
+
+    <!-- Bag Body -->
+    <g filter="url(#logoShadow)">
+      <path d="M15 19 L41 19 L38.5 46 C38.5 47.5 37.3 48.5 36 48.5 L20 48.5 C18.7 48.5 17.5 47.5 17.5 46 Z" fill="url(#logoKraftGrad)"/>
+      <path d="M32 19 L41 19 L38.5 46 C38.5 47.5 37.3 48.5 36 48.5 L31 48.5 Z" fill="url(#logoFoldGrad)" opacity="0.45"/>
+      <path d="M14 19 L42 19 L41 22 L15 22 Z" fill="#6B3F1D" opacity="0.6"/>
+      <!-- Lightning / Express Mark -->
+      <path d="M24 29 L32 29 L28 36 L33 36 L24 45 L26 37 L21 37 Z" fill="url(#logoGold)"/>
+    </g>
+
+    <!-- Eco Leaf Badge -->
+    <circle cx="43" cy="11" r="3.5" fill="#4ADE80"/>
+    <path d="M43 8.5 C 45 10, 45 12, 43 13.5 C 41 12, 41 10, 43 8.5 Z" fill="#15241C"/>
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(72, 0)">
+    <!-- Main Text "BAG EXPRESS" -->
+    <text x="0" y="34" font-family="'Cinzel', 'Playfair Display', 'Georgia', serif" font-size="22" font-weight="800" letter-spacing="1.5" fill="#2B4236">
+      BAG <tspan fill="#8C5E3C">EXPRESS</tspan>
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="1" y="49" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="700" letter-spacing="2.2" fill="#8C5E3C">
+      ARTISAN PAPER &amp; PACKAGING
+    </text>
+  </g>
+</svg>

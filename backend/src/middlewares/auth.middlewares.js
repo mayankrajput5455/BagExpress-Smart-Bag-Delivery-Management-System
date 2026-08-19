@@ -1,30 +1,43 @@
-import jwt from "jsonwebtoken";
-import { User } from "../models/user.models.js";
-import { ApiError } from "../utils/api-error.js";
-import { asyncHandler } from "../utils/async-handler.js";
+const jwt = require('jsonwebtoken');
+const User = require('../models/user.model.js');
+const AppError = require('../utils/app-error.js');
 
+exports.protect = async (req, res, next) => {
+  let token;
 
+  if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+    token = req.headers.authorization.split(' ')[1];
+  } else if (req.cookies && req.cookies.token) {
+    token = req.cookies.token;
+  }
 
-export const verifyJWT = asyncHandler(async (req, res, next) => {
-    const token = req.cookies?.accessToken || req.header("Authorization")?.replace(/^Bearer\s+/i, "").trim();
+  if (!token) {
+    return next(new AppError('Not authorized to access this route', 401));
+  }
 
-    if (!token) {
-        throw new ApiError(401, "Unauthorized Request");
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = await User.findById(decoded.id).select('-password -refreshToken');
+
+    if (!req.user) {
+      return next(new AppError('User not found', 401));
     }
 
-    try {
-        const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-
-        const user = await User.findById(decodedToken?._id).select("-password -refreshToken -emailVerificationToken -emailVerificationExpiry");
-
-        if (!user) {
-            throw new ApiError(401, "Invalid Access Token");
-        }
-
-        req.user = user;
-        return next();
-
-    } catch (error) {
-        throw new ApiError(401, "Invalid Access Token");
+    if (!req.user.isActive) {
+      return next(new AppError('Your account has been deactivated', 401));
     }
-});
+
+    next();
+  } catch (error) {
+    return next(new AppError('Not authorized, token failed', 401));
+  }
+};
+
+exports.authorize = (...roles) => {
+  return (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      return next(new AppError(`Role '${req.user.role}' is not authorized for this route`, 403));
+    }
+    next();
+  };
+};
